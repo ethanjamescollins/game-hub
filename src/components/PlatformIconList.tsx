@@ -24,13 +24,21 @@ const PlatformIconList = ({ platforms }: Props) => {
 		xbox: FaXbox,
 		nintendo: SiNintendo,
 		mac: FaApple,
-		lunix: FaLinux,
+		linux: FaLinux,
 		android: FaAndroid,
 		ios: MdPhoneIphone,
 		web: BsGlobe,
 	};
 	return (
-		<HStack marginY={"10px"}>
+		<HStack
+			overflowX={"auto"}
+			sx={{
+				"::-webkit-scrollbar": {
+					display: "none",
+				},
+			}}
+			marginY={"10px"}
+		>
 			{platforms.map((platform) => (
 				<Icon key={platform.id} as={iconMap[platform.slug]} color="gray.500" />
 			))}
